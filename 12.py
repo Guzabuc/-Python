@@ -16,3 +16,4 @@ data = json.dumps(week_dict)
 print(data)
 
 # {"0": "\u041f\u043e\u043d\u0435\u0434\u0435\u043b\u044c\u043d\u0438\u043a", "1": "\u0412\u5}  преобразовал в код
+# {
