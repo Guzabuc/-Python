@@ -1,19 +1,13 @@
-# формат передачи данных и хранения данных json - формат передачи данных на JS
-
 import json
 
-weekdays = ['Понедельник', 'Вторник', 'Среда', 'Четверг',
-            'Пятница', 'Суббота', 'Воскресенье']
+pets = {
+    'name': 'Barsic',
+    'age': 12,
+    'meals': ['Purina', 'Hills', 'Hm'],
+    'owner': {'fname': 'Sam', 'sname': 'Black'}
+}
 
-# списочное выражение
+with open ('pets.json', 'w') as pet_file:
+    json.dump(pets, pet_file)
 
-week_dict = {key: val for key, val in enumerate(weekdays)}
-
-# print(week_dict) # {0: 'Понедельник', 1: 'Вторник', 2: 'Среда', 3: 'Четверг', 4: 'Пятница', 5: 'Суббота', 6: 'Воскресенье'}
-
-data = json.dumps(week_dict)
-
-print(data)
-
-# {"0": "\u041f\u043e\u043d\u0435\u0434\u0435\u043b\u044c\u043d\u0438\u043a", "1": "\u0412\u5}  преобразовал в код
-# {
+# 'a' - добывить
