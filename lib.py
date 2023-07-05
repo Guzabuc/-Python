@@ -342,6 +342,16 @@ class Okno:
 #             self.btn['background'] = self.window.cget('bg')
 #         status = not status  # инверсия
 
-# yyy
-[[[[[]]]]]
+
+from tkinter import  * # подключаем элементы tkinter
+from tkinter import filedialog # для выбора картинки
+from PIL import Image # для обработки изображения
+
+class App:
+    def __init__(self):
+        self.window = Tk()   # Создали окно
+        self.window.title('Обработка картинки') # имя окна
+        self.window.geometry('800x600') # задаем размеры окна
+        self.window.resizable(False, False) # изменять размеры окна нельзя ни по х ни по у
+        self.window.mainloop()
 
