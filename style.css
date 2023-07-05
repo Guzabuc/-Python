@@ -1,0 +1,137 @@
+ @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600&display=swap&subset=cyrillic');
+* {
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+.button-1 {
+    color: #232323;
+    background: transparent;
+    border: 1px solid #232323;
+    position: relative;
+    font-size: 14px;
+    letter-spacing: .3em;
+    font-family: 'Montserrat', sans-serif;
+    padding: 17px 34px 17px 39px;
+    transition: .2s ease-in-out;
+    cursor: pointer;
+}
+.button-1:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 100%;
+    height: 100%;
+    background: #32D4E2;
+    z-index: -1;
+    transition: .25s ease;
+    transform: translate(0, 0);
+}
+.button-1:hover:before {
+    transform: translate(4px, 4px);
+}
+
+.button-2 {
+    color: #232323;
+    background: transparent;
+    border: 1px solid #232323;
+    position: relative;
+    font-size: 14px;
+    letter-spacing: .3em;
+    font-family: 'Montserrat', sans-serif;
+    padding: 17px 34px 17px 39px;
+    transition: .2s ease-in-out;
+    cursor: pointer;
+}
+.button-2:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 100%;
+    height: 100%;
+    background: #c61e80;
+    z-index: -1;
+    transition: .25s ease;
+    transform: translate(0, 0);
+}
+.button-2:hover:before {
+    transform: translate(4px, 4px);
+}
+
+.button-3 {
+    color: #232323;
+    background: transparent;
+    border: 1px solid #232323;
+    position: relative;
+    font-size: 14px;
+    letter-spacing: .3em;
+    font-family: 'Montserrat', sans-serif;
+    padding: 17px 34px 17px 39px;
+    transition: .2s ease-in-out;
+    cursor: pointer;
+}
+.button-3:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 100%;
+    height: 100%;
+    background: #df7625;
+    z-index: -1;
+    transition: .25s ease;
+    transform: translate(0, 0);
+}
+.button-3:hover:before {
+    transform: translate(4px, 4px);
+}
+
+.button-6 {
+    background: transparent;
+    border-width: 0;
+    position: relative;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    transition: .3s;
+}
+.button-6 span {
+    display: block;
+    position: relative;
+    z-index: 3;
+    background: #41294a;
+    color: white;
+    padding: 0 30px;
+    line-height: 40px;
+}
+.button-6:before {
+    content: "";
+    position: absolute;
+    width: calc(100% + 5px);
+    height: calc(100% + 5px);
+    left: -5px;
+    top: -5px;
+    background: #ff2c54;
+    z-index: 1;
+    transition: .4s ease-out;
+}
+.button-6:after {
+    content: "";
+    position: absolute;
+    width: calc(100% + 5px);
+    height: calc(100% + 5px);
+    right: -5px;
+    bottom: -5px;
+    background: #41ebdf;
+    transition: .4s ease-out .1s;
+}
+.button-6:hover:before {
+    transform: translate(5px, 5px);
+}
+.button-6:hover:after {
+    transform: translate(-5px, -5px);
+}
