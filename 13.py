@@ -46,6 +46,8 @@ class App():
 
     def open(self):
         self.name = self.place.get()
+        if self.name == '' or len(self.name) < 5:
+            self.name = 'Санкт-Петербург, ул. Можайская 2'
         self.geocoder_request = f'http://geocode-maps.yandex.ru/1.x/?apikey={self.apikey}&geocode={self.name}&kind=metro&format=json'
         response = requests.get(self.geocoder_request)   # response - ссылка на объект
         info = response.json()
