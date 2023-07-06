@@ -18,9 +18,6 @@ class App():
         self.window.resizable(False, False) # изменять размеры окна нельзя ни по х ни по у
         self.window.iconphoto(False, PhotoImage(file='icons8.png'))
 
-        self.apikey = '40d1649f-0493-4b70-98ba-98533de7710b'
-        self.geocoder_request = f'http://geocode-maps.yandex.ru/1.x/?apikey={apikey}&geocode={name}&kind=metro&format=json'
-
         self.label = Label(text='Обработка изображений',
                            background='#ffff00', foreground='red',
                            font=('Verdana', 16))
