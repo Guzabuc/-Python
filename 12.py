@@ -1,7 +1,15 @@
 from tkinter import * # подключаем элементы tkinter
 from tkinter import filedialog # для выбора картинки
 from PIL import Image, ImageTk, ImageFilter, ImageEnhance # для обработки изображенияfro
+from datetime import datetime
 import os
+
+
+
+
+
+
+
 class App():
     def __init__(self):
         self.window = Tk()   # Создали окно
@@ -9,6 +17,10 @@ class App():
         self.window.geometry('800x600')  # задаем размеры окна
         self.window.resizable(False, False) # изменять размеры окна нельзя ни по х ни по у
         self.window.iconphoto(False, PhotoImage(file='icons8.png'))
+
+        self.apikey = '40d1649f-0493-4b70-98ba-98533de7710b'
+        self.geocoder_request = f'http://geocode-maps.yandex.ru/1.x/?apikey={apikey}&geocode={name}&kind=metro&format=json'
+
         self.label = Label(text='Обработка изображений',
                            background='#ffff00', foreground='red',
                            font=('Verdana', 16))
@@ -25,13 +37,16 @@ class App():
         self.sharp = Button(text='Резкость', command=self.sharp)
         # создали кнопку c размытием
         self.sharp.pack(anchor=N, side=LEFT, padx=50, fill=X, expand=True)
+        self.dtime = Label(background='#ffffff', foreground='#111111',
+                           font=('Verdana', 26))
+        self.dtime.place(x=310, y=530)
 
 
         self.cwd = os.getcwd()
 
         self.image = None # заглушка (сюда будут поподать картинки)
         self.orig = Image.new('RGB', (600, 400), (255, 255, 255))
-
+        self.show_time()
         self.window.mainloop() # ожидание (всегда на последней строчке)
 
     def open(self):
@@ -72,9 +87,11 @@ class App():
         self.image= ImageTk.PhotoImage(sharp_img)
         self.canvas.create_image(0, 0, anchor=NW, image=self.image)
 
-
-
-
+    def show_time(self):
+        self.time_to_show = datetime.time(datetime.now()).strftime("%H:%M:%S")
+        self.dtime['text'] = self.time_to_show
+        self.dtime.after(1000, self.show_time)
+        # .after рекурсивный метод, каждую 1 секунду будет отображаться время
 
 
 
