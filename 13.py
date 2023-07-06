@@ -32,7 +32,7 @@ class App():
         self.load.pack(anchor=N, side=LEFT, padx=5, fill=X, expand=True) # padx=50 отсуп по оси х
         self.place = Entry(width=60, font=('Verdana', 16))
         self.place.pack(anchor=N, side=LEFT, padx=5, fill=X, expand=True)
-
+        self.root.brind('<Return>', self.open)
 
 
 
@@ -63,7 +63,7 @@ class App():
             'll': coords,
             'spn': delta,
             'l': 'map',
-            'pt': f'{coords},pm2dgl'
+            'pt': f'{coords},pm2dgl'    # здесь не должно быть пробела
         }
         api_server = 'http://static-maps.yandex.ru/1.x/'
         image_map = requests.get(api_server, params=map_param)
